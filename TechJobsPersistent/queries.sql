@@ -1,4 +1,4 @@
---Part 1
+--Part 1: Id integer, Name longtext, EmployerId integer
 
 --Part 2
 
