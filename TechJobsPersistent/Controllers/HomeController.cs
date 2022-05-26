@@ -29,10 +29,13 @@ namespace TechJobsPersistent.Controllers
             return View(jobs);
         }
 
+
+        // pt 2 adding a job todo no.2
         [HttpGet("/Add")]
         public IActionResult AddJob()
         {
-            return View();
+            AddJobViewModel addJobViewModel = new AddJobViewModel();
+            return View(addJobViewModel);
         }
 
         public IActionResult ProcessAddJobForm()

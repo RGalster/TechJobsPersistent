@@ -1,11 +1,18 @@
-﻿namespace TechJobsPersistent.ViewModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TechJobsPersistent.ViewModels
 {
     public class AddEmployerViewModel
     {
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Location is required")]
+        public string Location { get; set; }
     }
 }
 
-
+// I'm looking at the AddJobSkillViewModel and saying to myself "self, this view should have all the same functionality as AddJobSkillViewModel"
 
 //public class AddJobSkillViewModel
 //{
