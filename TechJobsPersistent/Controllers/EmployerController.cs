@@ -11,8 +11,8 @@ using TechJobsPersistent.ViewModels;
 
 namespace TechJobsPersistent.Controllers
 {
-    // pt 2 controllers todo no.1
-    // i beleive this belongs here
+    // pt 2 controllers todo no.1 completed
+    
     public class EmployerController : Controller
     {
         private JobDbContext context;
@@ -42,7 +42,6 @@ namespace TechJobsPersistent.Controllers
         // pt 2 controllers todo no.4
         // i believe this needs to 'post'
         // validation completed
-        // move on for now / check back on these tasks
         [HttpPost]
         public IActionResult ProcessAddEmployerForm(AddEmployerViewModel addEmployerViewModel)
         {
@@ -58,19 +57,23 @@ namespace TechJobsPersistent.Controllers
                 context.Employers.Add(newEmployer);
                 context.SaveChanges();
 
-                // do i want to redirect here?
+                // i want to redirect to Employer/Index
+                return Redirect("/Employer/Index");
             }
+            
 
-            // do i need to pass something to the view?
-            return View();
+            //  i passed this
+            // 
+            return View("Add", addEmployerViewModel);
+
         }
 
         // pt 2 controllers todo no.5
-        // i think this is complete
+        //  this is complete
         public IActionResult About(int id)
         {
             Employer theEmployer = context.Employers
-                .Single(e => e.Id == id);
+                .Find(id);
             
             return View(theEmployer);
         }
